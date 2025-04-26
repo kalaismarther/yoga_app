@@ -1,0 +1,157 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "48414CB2",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "FDE3F17E",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Power yoga",
+          "displayName" : "Power Yoga",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "power_yoga_1_month",
+      "referenceName" : "Power Yoga",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "37A9BB6B",
+      "localizations" : [
+        {
+          "description" : "Therapy yoga",
+          "displayName" : "Therapy yoga",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "therapy_yoga_1_month",
+      "referenceName" : "Therapy Yoga",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "D710472B",
+      "localizations" : [
+        {
+          "description" : "Prenatal yoga",
+          "displayName" : "Prenatal Yoga",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "prenatal_yoga_1_month",
+      "referenceName" : "Prenatal Yoga",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "99ADB22E",
+      "localizations" : [
+        {
+          "description" : "Prenatal yoga three month",
+          "displayName" : "Prenatal Yoga Three Month",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "prenatal_yoga_3_month",
+      "referenceName" : "Prenatal Yoga 3 Month",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "F49795C5",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "prenatal_yoga_6_month",
+      "referenceName" : "Prenatal yoga 6 month",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
