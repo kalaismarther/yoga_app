@@ -101,7 +101,6 @@ class _BookingSummaryScreenState extends State<BookingSummaryScreen> {
             isIos: 1,
           ),
         );
-    // TODO: Add your verification logic here (e.g., server-side validation)
   }
 
   // Buy a product

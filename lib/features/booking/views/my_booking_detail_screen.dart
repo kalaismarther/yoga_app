@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:yoga_app/Helper/user_helper.dart';
-import 'package:yoga_app/features/booking/bloc/my_booking_bloc.dart';
+// import 'package:yoga_app/features/booking/bloc/my_booking_bloc.dart';
 import 'package:yoga_app/features/booking/bloc/view_detail_bloc.dart';
 import 'package:yoga_app/features/booking/components/view_detail_loading.dart';
 import 'package:yoga_app/features/home/bloc/home_bloc.dart';
@@ -25,20 +25,22 @@ class MyBookingDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     bool mobile = DeviceSize.screenWidth(context) < 576;
     return PopScope(
-      canPop: false,
-      onPopInvokedWithResult: (didPop, result) {
-        if (didPop) {
-          return;
-        }
-        context.read<MyBookingBloc>().add(GetMyBookingsEvent(type: 1));
-        Nav.pop(context);
-      },
+      // canPop: false,
+      // onPopInvokedWithResult: (didPop, result) {
+      //   if (didPop) {
+      //     return;
+      //   }
+      //   context.read<MyBookingBloc>().add(GetMyBookingsEvent(type: 1));
+      //   Nav.pop(context);
+      // },
+      canPop: true,
+
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           leading: IconButton(
             onPressed: () {
-              context.read<MyBookingBloc>().add(GetMyBookingsEvent(type: 1));
+              // context.read<MyBookingBloc>().add(GetMyBookingsEvent(type: 1));
               Nav.pop(context);
             },
             icon: Image.asset(

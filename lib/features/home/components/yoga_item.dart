@@ -70,7 +70,7 @@ class YogaItem extends StatelessWidget {
                   ),
                   Text(
                     yoga.name.toUpperCase(),
-                    maxLines: 2,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   )
@@ -98,7 +98,9 @@ class YogaItem extends StatelessWidget {
                   const VerticalSpace(height: 20),
                   Text(
                     yoga.name.toUpperCase(),
-                    style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
                         fontSize: 17.5, overflow: TextOverflow.ellipsis),
                   ),
                 ],

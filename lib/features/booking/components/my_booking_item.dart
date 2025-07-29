@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yoga_app/features/booking/bloc/view_detail_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:yoga_app/features/booking/bloc/view_detail_bloc.dart';
+// import 'package:yoga_app/features/booking/views/my_booking_detail_screen.dart';
+// import 'package:yoga_app/utils/navigations.dart';
 import 'package:yoga_app/features/booking/models/my_booking_model.dart';
-import 'package:yoga_app/features/booking/views/my_booking_detail_screen.dart';
 import 'package:yoga_app/utils/device_size.dart';
-import 'package:yoga_app/utils/navigations.dart';
 import 'package:yoga_app/widgets/horizontal_space.dart';
 import 'package:yoga_app/widgets/vertical_space.dart';
 
 class MyBookingItem extends StatelessWidget {
-  const MyBookingItem({super.key, required this.bookingDetail});
+  const MyBookingItem(
+      {super.key, required this.bookingDetail, required this.onTap});
 
   final MyBookingModel bookingDetail;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     bool mobile = DeviceSize.screenWidth(context) < 576;
     return GestureDetector(
-      onTap: () {
-        context
-            .read<ViewDetailBloc>()
-            .add(GetBookingDetailEvent(bookingId: bookingDetail.id));
-        Nav.push(context, const MyBookingDetailScreen());
-      },
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(mobile ? 16 : 24),
@@ -125,6 +122,21 @@ class MyBookingItem extends StatelessWidget {
                   .textTheme
                   .bodySmall!
                   .copyWith(fontSize: mobile ? 12 : 18),
+            ),
+            VerticalSpace(height: mobile ? 8 : 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'View Details',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontSize: mobile ? 12 : 18,
+                      color: Theme.of(context).colorScheme.primary),
+                ),
+                const HorizontalSpace(width: 4),
+                Icon(Icons.arrow_forward,
+                    size: 16, color: Theme.of(context).colorScheme.primary)
+              ],
             ),
           ],
         ),

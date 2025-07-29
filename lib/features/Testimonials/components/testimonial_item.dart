@@ -18,31 +18,31 @@ class TestimonialItem extends StatefulWidget {
 }
 
 class _TestimonialItemState extends State<TestimonialItem> {
-  late VideoPlayerController _controller;
-  //
+  VideoPlayerController? _controller;
+
   @override
   void initState() {
+    super.initState();
     if (widget.testimonial.videoUrl.isNotEmpty) {
       _controller = VideoPlayerController.networkUrl(
-          Uri.parse(widget.testimonial.videoUrl),
-          videoPlayerOptions: VideoPlayerOptions())
-        ..initialize().then((_) {
-          setState(() {});
+        Uri.parse(widget.testimonial.videoUrl),
+        videoPlayerOptions: VideoPlayerOptions(),
+      )..initialize().then((_) {
+          if (mounted) setState(() {});
         });
     }
-    super.initState();
   }
-  //
+
   @override
   void dispose() {
-    _controller.dispose();
+    _controller?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     bool mobile = DeviceSize.screenWidth(context) < 576;
-    //
+
     return Container(
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(bottom: 20),
@@ -107,39 +107,34 @@ class _TestimonialItemState extends State<TestimonialItem> {
               maxLines: 3,
             ),
           const VerticalSpace(height: 10),
-          if (widget.testimonial.videoUrl.isNotEmpty) ...[
-            _controller.value.isInitialized
+          if (widget.testimonial.videoUrl.isNotEmpty)
+            _controller != null && _controller!.value.isInitialized
                 ? Container(
                     clipBehavior: Clip.hardEdge,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: AspectRatio(
-                      aspectRatio: _controller.value.aspectRatio,
+                      aspectRatio: _controller!.value.aspectRatio,
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            _controller.value.isPlaying
-                                ? _controller.pause()
-                                : _controller.play();
+                            _controller?.value.isPlaying == true
+                                ? _controller?.pause()
+                                : _controller?.play();
                           });
                         },
                         child: Stack(
                           children: [
-                            VideoPlayer(_controller),
-                            Positioned(
-                              top: 0,
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: _controller.value.isPlaying
-                                  ? const SizedBox()
-                                  : const Icon(
-                                      Icons.play_circle_filled,
-                                      size: 50,
-                                      color: Colors.white,
-                                    ),
-                            ),
+                            VideoPlayer(_controller!),
+                            if (!_controller!.value.isPlaying)
+                              const Center(
+                                child: Icon(
+                                  Icons.play_circle_filled,
+                                  size: 50,
+                                  color: Colors.white,
+                                ),
+                              ),
                           ],
                         ),
                       ),
@@ -161,7 +156,6 @@ class _TestimonialItemState extends State<TestimonialItem> {
                       ),
                     ),
                   ),
-          ]
         ],
       ),
     );

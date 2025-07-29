@@ -1,0 +1,2 @@
+C:/Users/user/AndroidStudioProjects/Flutter/yoga_app/android/app/.cxx/RelWithDebInfo/1v4y4a38/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/user/AndroidStudioProjects/Flutter/yoga_app/android/app/.cxx/RelWithDebInfo/1v4y4a38/armeabi-v7a/CMakeFiles/rebuild_cache.dir

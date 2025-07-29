@@ -183,7 +183,7 @@ class _SideMenuState extends State<SideMenu> {
               AppImages.star,
               height: 18,
             ),
-            title: const Text('Client Feedbacks'),
+            title: const Text('Reviews'),
             trailing: Image.asset(
               AppImages.rightArrow,
               height: 12,

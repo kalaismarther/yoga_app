@@ -1,0 +1,2 @@
+C:/Users/user/AndroidStudioProjects/Flutter/yoga_app/android/app/.cxx/Debug/04x1201z/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/user/AndroidStudioProjects/Flutter/yoga_app/android/app/.cxx/Debug/04x1201z/arm64-v8a/CMakeFiles/rebuild_cache.dir

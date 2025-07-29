@@ -26,7 +26,7 @@ class TestimonialScreen extends StatelessWidget {
             ),
           ),
           title: Text(
-            'Client Feedbacks',
+            'Reviews',
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

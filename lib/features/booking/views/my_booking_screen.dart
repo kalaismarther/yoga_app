@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yoga_app/Helper/user_helper.dart';
 import 'package:yoga_app/features/booking/bloc/my_booking_bloc.dart';
+import 'package:yoga_app/features/booking/bloc/view_detail_bloc.dart';
 import 'package:yoga_app/features/booking/components/my_booking_item.dart';
 import 'package:yoga_app/features/booking/components/my_booking_loading.dart';
+import 'package:yoga_app/features/booking/views/my_booking_detail_screen.dart';
 import 'package:yoga_app/utils/app_images.dart';
 import 'package:yoga_app/utils/app_indicators.dart';
 import 'package:yoga_app/utils/device_size.dart';
+import 'package:yoga_app/utils/navigations.dart';
 import 'package:yoga_app/widgets/horizontal_space.dart';
 import 'package:yoga_app/widgets/vertical_space.dart';
 
@@ -130,6 +133,19 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) => MyBookingItem(
                         bookingDetail: state.data.mybookingsList[index],
+                        onTap: () async {
+                          context.read<ViewDetailBloc>().add(
+                              GetBookingDetailEvent(
+                                  bookingId:
+                                      state.data.mybookingsList[index].id));
+                          await Nav.push(
+                              context, const MyBookingDetailScreen());
+                          if (context.mounted) {
+                            context
+                                .read<MyBookingBloc>()
+                                .add(GetMyBookingsEvent(type: type));
+                          }
+                        },
                       ),
                     )
                   else if (state is MyBookingsListFailureState)
